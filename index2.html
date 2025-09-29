@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>مصنع صلالة للأسمدة</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    /* الشريط العلوي */
+    .navbar {
+      background: linear-gradient(270deg, #4CAF50, #2ecc71, #4CAF50);
+      background-size: 600% 600%;
+      animation: gradientMove 8s ease infinite;
+      overflow: hidden;
+      padding: 10px 20px;
+    }
+
+    .navbar a {
+      float: right;
+      color: white;
+      text-decoration: none;
+      padding: 14px 16px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .navbar a.active {
+      background-color: #00000022;
+      border-bottom: 3px solid #000;
+    }
+
+    .navbar a:hover {
+      background-color: #000000;
+    }
+
+    .logo {
+      float: right;
+      height: 50px;
+      margin-left: 15px;
+    }
+
+    .search-container {
+      float: left;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .search-container input[type="text"] {
+      padding: 6px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .search-container button {
+      padding: 6px 10px;
+      background-color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #4CAF50;
+    }
+
+    /* البانر */
+    .hero {
+      background-image: url('images/ml.png'); /* ✳️ حط صورتك هنا */
+      background-size: cover;
+      background-position: center;
+      height: 900px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .hero .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin: 0;
+      font-family: 'Segoe Script', cursive;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #e0e0e0;
+      margin-top: 10px;
+    }
+
+    .products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px;
+}
+
+.product {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  width: 250px;
+  margin: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.product:hover {
+  transform: scale(1.03);
+}
+
+.product h3 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.product p {
+  color: #555;
+  font-size: 15px;
+}
+
+.product-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 250px;
+  margin: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  background-color: #000000;
+}
+
+
+    /* زر واتساب */
+    .whatsapp {
+      position: fixed;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      z-index: 1000;
+    }
+
+    .whatsapp img {
+      width: 55px;
+      height: 55px;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp img:hover {
+      transform: scale(1.1);
+    }
+
+    /* الفوتر */
+    .site-footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 40px 20px;
+      font-size: 14px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-section {
+      flex: 1;
+      margin: 10px;
+    }
+
+    .footer-section h3,
+    .footer-section h4 {
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .footer-section a {
+      color: #bdc3c7;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      color: #ffffff;
+    }
+
+    .social-icon {
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #444;
+      margin-top: 30px;
+      padding-top: 15px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .navbar a,
+      .search-container {
+        float: none;
+        display: block;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ شريط التنقل -->
+  <div class="navbar">
+    <img src="images/logo.jpg" class="logo" alt="لوجو المصنع" />
+    <a href="index2.html" class="active">الرئيسية</a>
+    <a href="about.html">عن المصنع</a>
+    <a href="products.html">منتجاتنا</a>
+    <a href="contact.html">تواصل معنا</a>
+    <a href="privacy.html">سياسة الخصوصية</a>
+    <div class="search-container">
+      <input type="text" placeholder="ابحث..." />
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div>
+
+  <!-- ✅ بانر ترحيبي -->
+  <div class="hero">
+    <div class="overlay">
+      <h1>Salalah Fertilizer</h1>
+      <p>نقدّم أفضل الحلول الزراعية المتطورة لتحسين جودة التربة وزيادة الإنتاج</p>
+    </div>
+  </div>
+
+  <!-- ✅ قسم منتجات مميزة -->
+<div class="products" id="products">
+ <div class="products">
+     <a href="products.html#organic" class="product">
+    <img src="images/me.png" alt="سماد عضوي" class="product-img">
+    <h3>سماد عضوي</h3>
+    <p>محسّن طبيعي للتربة غني بالمواد العضوية.</p>
+     </a>
+  </div>
+  <div class="products">
+     <a href="products.html#liquid" class="product">
+    <img src="images/ma.png" alt="سماد سائل" class="product-img">
+    <h3>سماد سائل</h3>
+    <p>مغذٍ سريع الامتصاص يعزز نمو النبات.</p>
+     </a>
+  </div>
+  <div class="products">
+     <a href="products.html#suspended" class="product">
+    <img src="images/mo.png" alt="سماد معلق" class="product-img">
+    <h3>سماد معلق</h3>
+    <p>يوفر العناصر الغذائية للنبات بشكل فوري.</p>
+     </a>
+  </div>
+</div>
+
+
+  <!-- ✅ زر واتساب -->
+  <a href="https://wa.me/201002912921" class="whatsapp" target="_blank" title="راسلنا على واتساب">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+  </a>
+
+  <!-- ✅ الفوتر -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3>مصنع صلالة للأسمدة</h3>
+        <p>نحن ملتزمون بتقديم حلول زراعية مبتكرة ومستدامة في جمهورية مصر العربية. نسعى لتعزيز جودة التربة وزيادة الإنتاجية عبر استخدام تقنيات متطورة وأسمدة عضوية آمنة للبيئة.</p>
+        <p>📞 01002912921</p>
+        <p>📧 info@salalahfert.com</p>
+        <p>📍 وادي النطرون، مصر</p>
+      </div>
+
+      <div class="footer-section links">
+        <h4>روابط سريعة</h4>
+        <a href="index2.html">الرئيسية</a><br />
+        <a href="about.html">عن المصنع</a><br />
+        <a href="products.html">منتجاتنا</a><br />
+        <a href="contact.html">تواصل معنا</a><br />
+        <a href="privacy.html">سياسة الخصوصية</a><br />
+      </div>
+
+      <div class="footer-section social">
+        <h4>تابعنا</h4>
+        <a href="https://facebook.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" class="social-icon" alt="Facebook"></a>
+        <a href="https://instagram.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" class="social-icon" alt="Instagram"></a>
+        <a href="https://twitter.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/twitter--v1.png" class="social-icon" alt="Twitter"></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 مصنع صلالة للأسمدة. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>منتجاتنا - مصنع صلالة للأسمدة</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    /* شريط التنقل */
+     .navbar {
+      background: linear-gradient(270deg, #4CAF50, #2ecc71, #4CAF50);
+      background-size: 600% 600%;
+      animation: gradientMove 8s ease infinite;
+      overflow: hidden;
+      padding: 10px 20px;
+    }
+
+    .navbar a {
+  float: right;
+  color: white;
+  text-decoration: none;
+  padding: 14px 16px;
+  font-size: 18px; /* ✅ حجم الخط */
+  font-weight: bold; /* ✅ جعله عريض */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* ✅ نوع الخط */
+}
+
+
+    .navbar a:hover,{
+      background-color: black;
+      border-radius: 5px;
+    }
+
+
+ .navbar a.active {
+  background-color: #000000; /* لون التمييز */
+  border-radius: 5px;
+  color: white;
+}
+
+    .logo {
+      float: right;
+      height: 50px;
+      margin-left: 15px;
+    }
+
+    .search-container {
+      float: left;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .search-container input[type="text"] {
+      padding: 6px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .search-container button {
+      padding: 6px 10px;
+      background-color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #4CAF50;
+    }
+
+    /* البانر */
+    .hero {
+      background-image: url('images/banner.webp');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .hero .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin: 0;
+      font-family: 'Segoe Script', cursive;
+    }
+
+    /* أقسام المنتجات */
+    .product-section {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #f0f0f0;
+      margin-bottom: 20px;
+    }
+
+    .product-section h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #4CAF50;
+      background-color: rgba(255,255,255,0.3);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .product {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      width: 220px;
+      margin: 10px;
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .product h3 {
+      color: #4CAF50;
+      margin-bottom: 10px;
+    }
+
+    .product p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .site-footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 40px 20px;
+      font-size: 14px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-section {
+      flex: 1;
+      margin: 10px;
+    }
+
+    .footer-section h3,
+    .footer-section h4 {
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .footer-section a {
+      color: #bdc3c7;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      color: #ffffff;
+    }
+
+    .social-icon {
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #444;
+      margin-top: 30px;
+      padding-top: 15px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .navbar a,
+      .search-container {
+        float: none;
+        display: block;
+        text-align: center;
+      }
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شريط التنقل -->
+  <div class="navbar">
+    <img src="images/logo.jpg" class="logo" alt="لوجو المصنع">
+    <a href="index2.html">الرئيسية</a>
+    <a href="about.html">عن المصنع</a>
+    <a href="products.html" class="active">منتجاتنا</a>
+    <a href="contact.html">تواصل معنا</a>
+    <a href="privacy.html">سياسة الخصوصية</a>
+
+    <div class="search-container">
+      <input type="text" placeholder="ابحث..." name="search" />
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div>
+
+  <!-- البانر -->
+  <div class="hero">
+    <div class="overlay">
+      <h1>منتجاتنا</h1>
+    </div>
+  </div>
+
+  <!-- قسم السماد العضوي -->
+  <div id="organic" class="product-section">
+    <h2>سماد عضوي</h2>
+    <div class="products">
+      <div class="product">
+        <img src="images/me.png" alt="سماد عضوي 1">
+        <h3>سماد عضوي 1</h3>
+        <p>محسن طبيعي للتربة غني بالمواد العضوية.</p>
+      </div>
+      <div class="product">
+        <img src="images/me.png" alt="سماد عضوي 2">
+        <h3>سماد عضوي 2</h3>
+        <p>يزيد خصوبة التربة ويعزز نمو النباتات.</p>
+      </div>
+      <div class="product">
+        <img src="images/me.png" alt="سماد عضوي 3">
+        <h3>سماد عضوي 3</h3>
+        <p>غني بالعناصر الغذائية الطبيعية للنبات.</p>
+      </div>
+      <div class="product">
+        <img src="images/me.png" alt="سماد عضوي 4">
+        <h3>سماد عضوي 4</h3>
+        <p>يدعم التربة المستدامة ويحافظ على البيئة.</p>
+      </div>
+      <div class="product">
+        <img src="images/me.png" alt="سماد عضوي 5">
+        <h3>سماد عضوي 5</h3>
+        <p>يحسن إنتاجية المحاصيل بشكل طبيعي وآمن.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- قسم السماد السائل -->
+  <div id="liquid" class="product-section">
+    <h2>سماد سائل</h2>
+    <div class="products">
+      <div class="product">
+        <img src="images/ma.png" alt="سماد سائل 1">
+        <h3>سماد سائل 1</h3>
+        <p>مغذٍ سريع الامتصاص يعزز نمو النبات.</p>
+      </div>
+      <div class="product">
+        <img src="images/ma.png" alt="سماد سائل 2">
+        <h3>سماد سائل 2</h3>
+        <p>يعزز لون الأوراق وصحة النباتات.</p>
+      </div>
+      <div class="product">
+        <img src="images/ma.png" alt="سماد سائل 3">
+        <h3>سماد سائل 3</h3>
+        <p>محسن للنباتات المزروعة في البيوت المحمية.</p>
+      </div>
+      <div class="product">
+        <img src="images/ma.png" alt="سماد سائل 4">
+        <h3>سماد سائل 4</h3>
+        <p>يدعم مقاومة الأمراض النباتية بشكل طبيعي.</p>
+      </div>
+      <div class="product">
+        <img src="images/ma.png" alt="سماد سائل 5">
+        <h3>سماد سائل 5</h3>
+        <p>يعزز نمو الجذور ويزيد امتصاص العناصر.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- قسم السماد المعلق -->
+  <div id="suspended" class="product-section">
+    <h2>سماد معلق</h2>
+    <div class="products">
+      <div class="product">
+        <img src="images/mo.png" alt="سماد معلق 1">
+        <h3>سماد معلق 1</h3>
+        <p>يوفر العناصر الغذائية بشكل فوري للنباتات.</p>
+      </div>
+      <div class="product">
+        <img src="images/mo.png" alt="سماد معلق 2">
+        <h3>سماد معلق 2</h3>
+        <p>يعزز نمو النباتات في التربة الرملية.</p>
+      </div>
+      <div class="product">
+        <img src="images/mo.png" alt="سماد معلق 3">
+        <h3>سماد معلق 3</h3>
+        <p>يحتوي على المغذيات الأساسية للنباتات.</p>
+      </div>
+      <div class="product">
+        <img src="images/mo.png" alt="سماد معلق 4">
+        <h3>سماد معلق 4</h3>
+        <p>مناسب للمزارع الصغيرة والكبيرة.</p>
+      </div>
+      <div class="product">
+        <img src="images/mo.png" alt="سماد معلق 5">
+        <h3>سماد معلق 5</h3>
+        <p>يعزز الإنتاجية ويحافظ على صحة النبات.</p>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- الفوتر -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3>مصنع صلالة للأسمدة</h3>
+        <p>نحن ملتزمون بتقديم حلول زراعية مبتكرة ومستدامة في جمهورية مصر العربية. نسعى لتعزيز جودة التربة وزيادة الإنتاجية عبر استخدام تقنيات متطورة وأسمدة عضوية آمنة للبيئة.</p>
+        <p>📞 01002912921</p>
+        <p>📧 info@salalahfert.com</p>
+        <p>📍 وادي النطرون، مصر</p>
+      </div>
+
+      <div class="footer-section links">
+        <h4>روابط سريعة</h4>
+        <a href="index2.html">الرئيسية</a><br>
+        <a href="about.html">عن المصنع</a><br>
+        <a href="products.html">منتجاتنا</a><br>
+        <a href="contact.html">تواصل معنا</a><br>
+        <a href="privacy.html">سياسة الخصوصية</a><br>
+      </div>
+
+      <div class="footer-section social">
+        <h4>تابعنا</h4>
+        <a href="https://facebook.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" class="social-icon" alt="Facebook"></a>
+        <a href="https://instagram.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" class="social-icon" alt="Instagram"></a>
+        <a href="https://twitter.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/twitter--v1.png" class="social-icon" alt="Twitter"></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 مصنع صلالة للأسمدة. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
